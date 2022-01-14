@@ -22,4 +22,13 @@ class ExperiencesController < ApplicationController
   def experience_params
     params.require(:experience).permit(:company_name, :position, :date_begin, :date_end, :description)
   end
+
+  def download_pdf
+    send_file(
+      "#{Rails.root}/public/resume.pdf",
+      filename: "resume.pdf",
+      type: "application/pdf"
+      )
+  end
+
 end
