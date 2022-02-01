@@ -7,7 +7,7 @@ module.exports = {
     './app/views/**/*',
   ],
   theme: {
-    extend: {
+      extend: {
       fontFamily: {
         sans: ['Inter var', ...defaultTheme.fontFamily.sans],
       },
