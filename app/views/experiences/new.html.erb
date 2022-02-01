@@ -1,4 +1,8 @@
-<div>
-  <h1 class="font-bold text-4xl">Experiences#new</h1>
-  <p>Find me in app/views/experiences/new.html.erb</p>
-</div>
+<%= simple_form_for @experience do |f| %>
+  <%= f.input :company_name, as: :string %>
+  <%= f.input :position, as: :string %>
+  <%= f.input :date_begin, as: :date %>
+  <%= f.input :date_end, as: :date %>
+  <%= f.input :description, as: :text %>
+  <%= f.button :submit %>
+<% end %>

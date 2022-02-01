@@ -1,5 +1,7 @@
 class ExperiencesController < ApplicationController
 
+  before_action :set_experience, only: [:show]
+
   def show
     @experience = Experience.all
   end
@@ -9,6 +11,7 @@ class ExperiencesController < ApplicationController
   end
 
   def create
+    @experience = Experience.new(experience_params)
   end
 
   def delete
@@ -20,7 +23,11 @@ class ExperiencesController < ApplicationController
   private
 
   def experience_params
-    params.require(:experience).permit(:company_name, :position, :date_begin, :date_end, :description)
+    params.require(:experience).permit(:experience_id, :company_name, :position, :date_begin, :date_end, :description)
+  end
+
+  def set_experience
+    @experience = Experience.find(params[:id])
   end
 
   def download_pdf
