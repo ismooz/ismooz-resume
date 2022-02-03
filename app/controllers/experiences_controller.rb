@@ -3,7 +3,11 @@ class ExperiencesController < ApplicationController
   before_action :set_experience, only: [:show]
 
   def show
-    @experience = Experience.all
+    @experience = Experience.find(params[:id])
+  end
+
+  def index
+    @experiences = Experience.all
   end
 
   def new
@@ -12,6 +16,12 @@ class ExperiencesController < ApplicationController
 
   def create
     @experience = Experience.new(experience_params)
+    if @experience.save
+      flash[:success] = "New experience created!"
+      redirect_to root_path
+    else
+       render :new
+    end
   end
 
   def delete

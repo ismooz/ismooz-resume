@@ -27,6 +27,9 @@ gem "stimulus-rails"
 # Use Tailwind CSS [https://github.com/rails/tailwindcss-rails]
 gem "tailwindcss-rails"
 
+# Autoprefixer for rails [https://github.com/rails/autoprefixer]
+gem "autoprefixer-rails"
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
@@ -79,3 +82,6 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+#Devise for Users
+gem "devise"
